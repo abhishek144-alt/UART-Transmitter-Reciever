@@ -1,0 +1,26 @@
+# Vivado-generated project data
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+.Xil/
+
+# Vivado logs and generated reports
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.wcfg
+*.dcp
+*.rpt
+
+# Generated simulation and synthesis files
+*.sdb
+*.vds
+
+# Keep HDL sources and Vivado project files tracked.
+!*.srcs/
+!*.srcs/**
+!*.xpr
