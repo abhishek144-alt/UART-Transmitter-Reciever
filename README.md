@@ -56,6 +56,7 @@ The receive tick is approximately 16 times faster than the transmit tick. With a
 |   |   `-- uart_top.v
 |   `-- sim_1/new/
 |       `-- uart_top_tb.v
+|-- docs/images/
 |-- .gitignore
 `-- README.md
 ```
@@ -81,7 +82,53 @@ The simulation waveforms show:
 - `data_out = 8'h41` after reception.
 - `rdy` asserting when the received byte is valid.
 
-The testbench uses named port connections so clock, reset, data, and status signals cannot be silently connected to the wrong module ports.
+### Top-Level UART Loopback
+
+![Top-level UART schematic](docs/images/top-level-schematic.png)
+
+### Elaborated Design
+
+![Elaborated UART design](docs/images/elaborated-design.png)
+
+### Elaborated Transmitter
+
+![Elaborated transmitter](docs/images/elaborated-transmitter.png)
+
+### Elaborated Receiver
+
+![Elaborated receiver](docs/images/elaborated-receiver.png)
+
+## Simulation Waveforms
+
+The following captures show the clocking, baud-rate counters, transmitter state machine, receiver state machine, loopback transfer, and receive-ready behavior.
+
+### Simulation Hierarchy and Signals
+
+![Simulation hierarchy and signals](docs/images/simulation-hierarchy.png)
+
+### Baud-Rate Generator Counters
+
+![Baud-rate generator counters](docs/images/baud-generator-counters.png)
+
+### Transmitter Waveform
+
+![Transmitter waveform](docs/images/transmitter-waveform.png)
+
+### Receiver Waveform
+
+![Receiver waveform](docs/images/receiver-waveform.png)
+
+### Initial Transfer
+
+![Initial simulation waveform](docs/images/simulation-initial.png)
+
+### Received Byte
+
+![Received byte waveform](docs/images/simulation-received-byte.png)
+
+### Ready Clear
+
+![Ready clear waveform](docs/images/simulation-ready-clear.png)
 
 ## Top-Level Interface
 
@@ -110,6 +157,3 @@ The testbench uses named port connections so clock, reset, data, and status sign
 - Vivado XSim behavioral simulation
 - Target device shown in the elaborated design: `xc7vx485tffg1157-1`
 
-## Notes
-
-The schematic and waveform screenshots were supplied during project documentation, but image files are not currently present in the local workspace. Once exported as PNG files, place them under `docs/images/` and link them here without changing the HDL project structure.
